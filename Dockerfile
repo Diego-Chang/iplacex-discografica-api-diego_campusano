@@ -4,11 +4,11 @@ WORKDIR /app
 COPY ./build.gradle .
 COPY ./settings.gradle .
 COPY src ./src
-RUN gradle clean build -x --no-daemon
+RUN gradle build clean -x test --no-daemon
 
 # Segunda Etapa.
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21
 WORKDIR /app
-COPY --from=builder /app/build/libs/*.jar discografia-1.jar
+COPY --from=builder /app/build/libs/*.jar discografia.jar
 EXPOSE 443
-CMD ["java", "-jar", "discografia-1.jar"]
+CMD ["java", "-jar", "discografia.jar"]
