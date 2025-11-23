@@ -7,7 +7,7 @@ COPY src ./src
 RUN gradle build --no-daemon
 
 # Segunda Etapa.
-FROM openjdk:26-ea-24-jdk-slim-trixie
+FROM eclipse-temurin:21
 WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar discografia.jar
 EXPOSE 443
