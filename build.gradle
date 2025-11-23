@@ -10,7 +10,7 @@ description = 'Proyecto API REST Discografia de empleados Iplacex.'
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(26)
+		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
 
