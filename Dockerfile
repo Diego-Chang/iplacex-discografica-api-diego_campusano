@@ -4,7 +4,7 @@ WORKDIR /app
 COPY ./build.gradle .
 COPY ./settings.gradle .
 COPY src ./src
-RUN gradle clean build -x test --no-daemon
+RUN gradle build --no-daemon
 
 # Segunda Etapa.
 FROM openjdk:26-ea-24-jdk-slim-trixie
