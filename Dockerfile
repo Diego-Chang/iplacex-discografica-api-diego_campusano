@@ -9,6 +9,6 @@ RUN gradle clean build -x --no-daemon
 # Segunda Etapa.
 FROM openjdk:21-jdk-slim
 WORKDIR /app
-COPY --from=builder /app/build/libs/*.jar discografia-1.jar
+COPY --from=builder /app/build/libs/*.jar discografia.jar
 EXPOSE 443
-CMD ["java", "-jar", "discografia-1.jar"]
+CMD ["java", "-jar", "discografia.jar"]
