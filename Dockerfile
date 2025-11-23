@@ -4,7 +4,8 @@ WORKDIR /app
 COPY ./build.gradle .
 COPY ./settings.gradle .
 COPY src ./src
-RUN gradle build clean -x test --no-daemon
+RUN gradle clean build -x test --no-daemon
+
 
 # Segunda Etapa.
 FROM eclipse-temurin:21
